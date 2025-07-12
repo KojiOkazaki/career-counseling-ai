@@ -19,47 +19,49 @@ FFmpeg: Whisperが各種音声ファイルフォーマットを処理するた�
 インストールと設定
 ご利用のコンピュータでアプリケーションを動作させるための手順は以下の通りです。
 
-リポジトリのクローン
+1. リポジトリのクローン
 任意のディレクトリで以下のコマンドを実行し、ソースコードをダウンロードします。
 
 Bash
 
 git clone https://github.com/あなたのユーザー名/career-counseling-ai.git
 cd career-counseling-ai
-Python仮想環境の構築（推奨）
+2. Python仮想環境の構築（推奨）
 プロジェクトごとに依存関係を分離するため、仮想環境を作成して有効化します。
 
 Bash
 
 # 仮想環境の作成
 python3 -m venv venv
+
 # 仮想環境の有効化 (macOS / Linux)
 source venv/bin/activate
+
 # Windowsの場合は 'venv\Scripts\activate' を実行
-依存パッケージのインストール
+3. 依存パッケージのインストール
 requirements.txtファイルに基づき、必要なライブラリをインストールします。
 
 Bash
 
 pip install -r requirements.txt
-APIキーの設定
+4. APIキーの設定
 プロジェクトのルートディレクトリに.envという名前のファイルを作成し、ご自身のOpenAI APIキーを以下のように記述します。
 
 OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-この.envファイルは.gitignoreによってGitの管理対象外となり、GitHubへアップロードされることはありません。
+注意: この.envファイルは.gitignoreによってGitの管理対象外となり、GitHubへアップロードされることはありません。
 
 実行と使用方法
-アプリケーションの起動
+1. アプリケーションの起動
 ターミナルで以下のコマンドを実行します。
 
 Bash
 
 python app.py
-ブラウザでアクセス
+2. ブラウザでアクセス
 ターミナルに表示されるローカルURL（例: http://127.0.0.1:7860）をウェブブラウザで開きます。
 
-音声ファイルのアップロード
+3. 音声ファイルのアップロード
 画面の指示に従い、評価対象の音声ファイルをアップロードし、「Submit」ボタンをクリックします。
 
-評価結果の確認
+4. 評価結果の確認
 処理が完了すると、画面右側にAIによる評価とアドバイスが表示されます。
