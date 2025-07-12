@@ -4,7 +4,6 @@ This is a web application that uses AI to evaluate a recording of a career couns
 
 The application uses **OpenAI's Whisper** for transcription and **GPT-4o** for evaluation.
 
-![Screenshot of the app](<YOUR_SCREENSHOT_URL_HERE>)  ---
 
 ## ⚠️ Important Privacy Notice
 
