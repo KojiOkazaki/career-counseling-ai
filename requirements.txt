@@ -1,0 +1,6 @@
+openai>=1.0.0
+openai-whisper
+gradio
+python-dotenv
+# For M4A support, Whisper requires ffmpeg.
+# This cannot be installed via pip. Add instructions to README.md.
