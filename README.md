@@ -38,5 +38,8 @@ AIがキャリアカウンセリング音声を文字起こし・評価し、改
 
 起動後、ターミナルに表示されるURL（例：http://127.0.0.1:7860）をブラウザで開き、音声ファイルをアップロードして評価結果を確認してください。
 
+<img width="1110" height="414" alt="キャリアカウンセリング評価AI" src="https://github.com/user-attachments/assets/3705f71c-5cec-422d-9aab-4598ed110d2d" />
+
+
 ## ライセンス
 MIT License
