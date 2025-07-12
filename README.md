@@ -18,25 +18,25 @@ AIがキャリアカウンセリング音声を文字起こし・評価し、改
 - FFmpeg（必須）
 
 ## インストール
-```bash
-git clone https://github.com/あなたのユーザー名/career-counseling-ai.git
-cd career-counseling-ai
-python3 -m venv venv
-source venv/bin/activate  # Windows: venv\\Scripts\\activate
-pip install -r requirements.txt
+以下のコマンドを順に実行してください。
 
-設定
+    git clone https://github.com/あなたのユーザー名/career-counseling-ai.git
+    cd career-counseling-ai
+    python3 -m venv venv
+    source venv/bin/activate  # Windows: venv\Scripts\activate
+    pip install -r requirements.txt
 
-プロジェクト直下に .env を作成し、APIキーを記述
+## 設定
+プロジェクトルートに **.env** ファイルを作成し、以下を記述してください。
 
-OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-実行
+## 実行
+以下のコマンドでアプリケーションを起動します。
 
-python app.py
+    python app.py
 
-ブラウザで表示されるURLを開き、音声をアップロード
+起動後、ターミナルに表示されるURL（例：http://127.0.0.1:7860）をブラウザで開き、音声ファイルをアップロードして評価結果を確認してください。
 
-ライセンス
-
+## ライセンス
 MIT License
