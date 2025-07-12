@@ -1,75 +1,65 @@
-# 🤖 Career Counseling Evaluation AI
+キャリアカウンセリング評価AI
+概要
+本アプリケーションは、キャリアカウンセリングの音声データをAIが分析・評価するためのツールです。音声ファイル（MP3, M4A形式など）をアップロードすると、AIがセッション内容を文字起こしし、専門的な評価基準に基づいて具体的な改善点やアドバイスを生成します。
 
-This is a web application that uses AI to evaluate a recording of a career counseling session. You can upload an audio file (like M4A or MP3), and the tool will provide a structured evaluation and suggestions for improvement based on professional counseling criteria.
+技術スタックとして、文字起こしにはOpenAI Whisperを、評価の生成にはGPT-4oを利用しています。
 
-The application uses **OpenAI's Whisper** for transcription and **GPT-4o** for evaluation.
+個人情報とプライバシーに関する重要事項
+本アプリケーションは、分析のためにアップロードされた音声データから生成したテキスト情報を、外部のOpenAI APIへ送信します。
 
+機密情報や個人を特定できる情報（氏名、連絡先、企業名など）を含む音声は、決してアップロードしないでください。
 
-## ⚠️ Important Privacy Notice
+本ツールの使用は、上記内容に同意したものとみなされます。データの取り扱いには最大限の注意を払い、自己の責任においてご利用ください。
 
-This application sends the transcribed text from your audio file to the OpenAI API for analysis.
+動作環境
+Python: 3.8以上
 
--   **DO NOT** upload audio containing sensitive personal information (names, addresses, financial details, etc.).
--   By using this tool, you acknowledge that your data is processed by a third-party service.
+FFmpeg: Whisperが各種音声ファイルフォーマットを処理するために必要です。事前に公式サイトからインストールし、システムのPATHに追加してください。
 
----
+インストールと設定
+ご利用のコンピュータでアプリケーションを動作させるための手順は以下の通りです。
 
-## 🚀 Getting Started
+リポジトリのクローン
+任意のディレクトリで以下のコマンドを実行し、ソースコードをダウンロードします。
 
-Follow these steps to run the application on your own computer.
+Bash
 
-### Prerequisites
+git clone https://github.com/あなたのユーザー名/career-counseling-ai.git
+cd career-counseling-ai
+Python仮想環境の構築（推奨）
+プロジェクトごとに依存関係を分離するため、仮想環境を作成して有効化します。
 
--   Python 3.8 or newer
--   [FFmpeg](https://ffmpeg.org/download.html) (This is required by Whisper to process different audio formats). Please install it and ensure it's accessible in your system's PATH.
+Bash
 
-### Installation & Setup
+# 仮想環境の作成
+python3 -m venv venv
+# 仮想環境の有効化 (macOS / Linux)
+source venv/bin/activate
+# Windowsの場合は 'venv\Scripts\activate' を実行
+依存パッケージのインストール
+requirements.txtファイルに基づき、必要なライブラリをインストールします。
 
-1.  **Clone the Repository**
-    ```bash
-    git clone [https://github.com/](https://github.com/)<YOUR_USERNAME>/career-counseling-ai.git
-    cd career-counseling-ai
-    ```
+Bash
 
-2.  **Create a Virtual Environment (Recommended)**
-    This keeps the project's dependencies isolated from other Python projects.
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-    ```
+pip install -r requirements.txt
+APIキーの設定
+プロジェクトのルートディレクトリに.envという名前のファイルを作成し、ご自身のOpenAI APIキーを以下のように記述します。
 
-3.  **Install Dependencies**
-    This command installs all the necessary Python packages listed in `requirements.txt`.
-    ```bash
-    pip install -r requirements.txt
-    ```
+OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+この.envファイルは.gitignoreによってGitの管理対象外となり、GitHubへアップロードされることはありません。
 
-4.  **Set Up Your API Key**
-    The application needs an OpenAI API key to work.
-    
-    -   Create a file named `.env` in the project's main directory.
-    -   Add your API key to this file like so:
-        ```
-        OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        ```
-    *This `.env` file is listed in `.gitignore`, so it will **never** be uploaded to GitHub.*
+実行と使用方法
+アプリケーションの起動
+ターミナルで以下のコマンドを実行します。
 
-### How to Run the App
+Bash
 
-With your virtual environment activated and your `.env` file set up, run the following command:
-
-```bash
 python app.py
-```
+ブラウザでアクセス
+ターミナルに表示されるローカルURL（例: http://127.0.0.1:7860）をウェブブラウザで開きます。
 
-A message will appear in your terminal with a local URL (usually `http://127.0.0.1:7860`). Open this URL in your web browser to use the application.
+音声ファイルのアップロード
+画面の指示に従い、評価対象の音声ファイルをアップロードし、「Submit」ボタンをクリックします。
 
----
-
-## How to Use
-
-1.  Open the application in your browser.
-2.  Click or drag your audio file (e.g., `.m4a`, `.mp3`, `.wav`) into the upload box.
-3.  Click the **Submit** button.
-4.  Wait a few moments for the transcription and AI evaluation.
-5.  The evaluation will appear in the "Evaluation Result" box on the right.
+評価結果の確認
+処理が完了すると、画面右側にAIによる評価とアドバイスが表示されます。
